@@ -1,0 +1,2 @@
+To get running, export flask as the app: export FLASK_APP=hello.py
+Then just go with flask run
