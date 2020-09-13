@@ -21,5 +21,13 @@ app.logger.info('Started QA')
 def return_index():
     return render_template('index.html')
 
+@app.route('/blog')
+def return_blog():
+    return render_template('index.html')
+
+@app.route('/lessons')
+def return_lessons():
+    return render_template('index.html')
+
 if __name__ == "__main__":
     app.run()

@@ -1,3 +1,14 @@
 body {
-    background-color: antiquewhite;
+width: 100%;
+}
+
+#toolbar {
+    background-color: #7851A9 !important;
+    color: white;
+}
+
+#queen_logo {
+    width: 100%;
+    height: auto;
+    padding: 5%;
 }
