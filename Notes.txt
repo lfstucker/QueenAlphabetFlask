@@ -1,3 +1,5 @@
 To get running, export flask as the app: export FLASK_APP=hello.py
 Then just go with flask run
 test
+
+to download requirements.txt make sure you use pip3 install -r
