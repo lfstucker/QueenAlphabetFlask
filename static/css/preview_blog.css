@@ -1,0 +1,37 @@
+#preview {
+    margin: 5%;
+}
+
+#header {
+    font-size: 2em;
+    font-weight: bold;
+}
+
+#preview_logo {
+    width: 24em;
+    height: auto;
+    margin: 2%;
+    margin-left: auto;
+    margin-right: auto;
+    background: black !important;
+}
+
+#button_row{
+    text-align: center;
+}
+
+#blog_title {
+    font-size: 4em;
+    font-weight: bold;
+    margin-bottom: 3%;
+    text-align: center;
+    width: 100%;
+}
+
+#title_row {
+    text-align: center;
+}
+
+#info_row {
+    margin: 3%;
+}

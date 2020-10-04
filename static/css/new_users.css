@@ -1,0 +1,42 @@
+#admin_home {
+    margin-left: 30%;
+    margin-right: 30%;
+    width: 40%;
+    margin: 3%;
+}
+
+.body {
+    text-align: center !important;
+}
+
+#admin_username {
+    margin: 5% !important;
+    width: 90%;
+}
+
+#admin_password {
+    margin: 5% !important;
+    width: 90%;
+}
+
+#admin_submit {
+    margin-left: 30%;
+    margin-right: 30%;
+    width: 40%;
+}
+
+#admin_login_card {
+    margin: 5%;
+    margin-left: 30%;
+    margin-right: 30%;
+    text-align: center;
+}
+
+.card {
+    border: 2px solid black !important;
+}
+
+#button_link {
+    width: 100% !important;
+    text-align: center;
+}

@@ -1,14 +1,41 @@
 body {
 width: 100%;
+font-family: 'Schoolbell', cursive !important;
 }
 
-#toolbar {
+.navbar {
     background-color: #7851A9 !important;
-    color: white;
+    
+    /* height: 3em !important; */
+   
 }
 
-#queen_logo {
-    width: 100%;
-    height: auto;
-    padding: 5%;
+#toolbar_title {
+    font-size: 3em!important;
+    color: white !important;
 }
+
+#toolbar_tab {
+    font-size: 2em!important;
+    color: white !important;
+}
+
+.nav-item{
+    margin-left:2em !important;
+    margin-right:2em !important;
+  }
+
+
+
+.card {
+    border: 7px solid black !important;
+    border-radius: 10px;
+}
+
+.img {
+    border-radius: 10px; 
+}
+
+.active {
+    border-bottom: 5px solid white;
+  }

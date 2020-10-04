@@ -3,3 +3,15 @@ Then just go with flask run
 test
 
 to download requirements.txt make sure you use pip3 install -r
+
+sql alchaemy
+https://flask-sqlalchemy.palletsprojects.com/en/2.x/quickstart/
+
+how to use in our case SQL:
+https://pythonbasics.org/flask-sqlalchemy/
+
+TODO:
+start the iamges:
+https://stackoverflow.com/questions/31849494/serve-image-stored-in-sqlalchemy-largebinary-column
+
+Use {% extends "layout.html" %}

@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, inital-scale=1">
@@ -18,10 +17,9 @@
             integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
             crossorigin="anonymous"></script>
             <link href="https://fonts.googleapis.com/css2?family=Schoolbell&display=swap" rel="stylesheet">
-        <title>blog page</title>
+        <title>new page</title>
     </head>
-
-<body>
+   <body>
     <nav class="navbar navbar-expand-lg navbar-dark" id="toolbar">
         <a class="navbar-brand" id="toolbar_title">Queen Alphabet</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
@@ -30,10 +28,11 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ url_for('return_index') }}" id="toolbar_tab">Home </a>
+                <li class="nav-item active">
+                    <a class="nav-link" href="{{ url_for('return_index') }}" id="toolbar_tab">Home <span
+                            class="sr-only">(current)</span></a>
                 </li>
-                <li class="nav-item  active">
+                <li class="nav-item">
                     <a class="nav-link" href="{{ url_for('return_blog') }}" id="toolbar_tab">Blog </a>
                 </li>
                 <li class="nav-item">
@@ -42,10 +41,26 @@
             </ul>
         </div>
     </nav>
-
-    blog
-    
-
-</body>
-
+      <h3>Students - Flask SQLAlchemy example</h3>
+      <hr/>
+      
+      {%- for category, message in get_flashed_messages(with_categories = true) %}
+         <div class = "alert alert-danger">
+            {{ message }}
+         </div>
+      {%- endfor %}
+      
+      <form action = "{{ request.path }}" method = "post">
+         <label for = "name">Name</label><br>
+         <input type = "text" name = "name" placeholder = "Name" /><br>
+         <label for = "email">City</label><br>
+         <input type = "text" name = "city" placeholder = "city" /><br>
+         <label for = "addr">addr</label><br>
+         <textarea name = "addr" placeholder = "addr"></textarea><br>
+         <label for = "PIN">City</label><br>
+         <input type = "text" name = "pin" placeholder = "pin" /><br>
+         <input type = "submit" value = "Submit" />
+      </form>
+      
+   </body>
 </html>

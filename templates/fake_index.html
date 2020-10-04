@@ -28,20 +28,6 @@
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-                <li class="nav-item active">
-                    <a class="nav-link" href="{{ url_for('return_index') }}" id="toolbar_tab">Home <span
-                            class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ url_for('return_blog') }}" id="toolbar_tab">Blog </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ url_for('return_lessons') }}" id="toolbar_tab">Lessons</a>
-                </li>
-            </ul>
-        </div>
     </nav>
 
     <div class="row">
@@ -53,16 +39,16 @@
         </div>
 
         <div class="col-md-8">
- 
+
             <div class="card" id="queen_desc">
                 <div class="card-body">
                     <h5 class="card-title" id="welcome_title">Welcome!</h5>
                     <p class="card-text" id="welcome_text">The Queen Alphabet website is under construction and coming
                         soon. In the mean
                         time to stay up to date and subscribe to regal updates below.</p>
-        
-                    
-                    <form action = "{{ request.path }}" method = "post" enctype=multipart/form-data>
+
+
+                    <form action="{{ request.path }}" method="post" enctype=multipart/form-data>
                         </br>
                         <input type="text" id="welcome_input"
                             class=" form-control border-top-0 border-right-0 border-left-0" name="name" value="name" />
@@ -76,7 +62,7 @@
                             value="subscribe" />
                         </br>
                     </form>
-            
+
                 </div>
             </div>
 

@@ -1,0 +1,34 @@
+#queen_logo {
+    width: 100%;
+    height: auto;
+    margin: 5%;
+    background: black !important;
+}
+
+#queen_desc {
+    margin: 10%;
+    background: palegoldenrod;
+    
+}
+
+#welcome_title {
+    font-size: 7em;
+    font-weight: bold;
+    text-align: center;
+}
+
+#welcome_text {
+    font-size: 1em;
+    text-align: center;
+}
+
+#welcome_input {
+    background: palegoldenrod;
+    margin: auto;
+}
+
+#welcome_submit {
+    margin-left: 40%;
+    margin-right: 40%;
+    width: 20%;
+}

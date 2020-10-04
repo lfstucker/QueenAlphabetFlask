@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, inital-scale=1">
+    <link rel="stylesheet" type="text/css" href="../static/css/main.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/welcome.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/show_users.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Schoolbell&display=swap" rel="stylesheet">
+    <title>show users page</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark" id="toolbar">
+        <a class="navbar-brand" id="toolbar_title">Queen Alphabet</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+    <div class="row">
+        <div class="col" id="button_top">
+            <a href="{{ url_for('new_users') }}" id="button_link">
+                <button type="button" class="btn" id="new_users" name="New Users" value="New Users"> New Users </button>
+            </a>
+        </div>
+        <div class="col" id="button_top">
+            <a href="{{ url_for('admin_index') }}" id="button_link">
+                <button type="button" class="btn" id="admin_home" name="Admin Home" value="Admin Home"> Admin Home
+                </button>
+            </a>
+        </div>
+    </div>
+    <table id="user_table">
+        <thead>
+            <tr>
+                <th>Username</th>
+                <th>Password</th>
+                <!-- <th>Update</th> -->
+                <th>Delete</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            {% for user in users %}
+            <tr>
+                <td>{{ user.username }}</td>
+                <td>{{ user.password }}</td>
+                <!-- <td>
+                    <form action="{{ request.path }}" method="patch" id="this_form"><button type="submit" id="suer_view"
+                            class="form-control" name="Update" value="{{user.username}}"> Update </button></form>
+                </td> -->
+                <td>
+                    <form action="{{ request.path }}" method="post" id="this_form"><button type="submit" id="user_view"
+                            class="form-control" name="Delete" value="{{user.username}}"> Delete
+                        </button></form>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+</body>
+
+</html>

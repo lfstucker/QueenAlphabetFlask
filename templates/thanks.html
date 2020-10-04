@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, inital-scale=1">
     <link rel="stylesheet" type="text/css" href="../static/css/main.css">
-    <link rel="stylesheet" type="text/css" href="../static/css/welcome.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/thanks.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
@@ -18,7 +18,7 @@
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=Schoolbell&display=swap" rel="stylesheet">
-    <title>main page</title>
+    <title>thanks page</title>
 </head>
 
 <body>
@@ -44,44 +44,17 @@
         </div>
     </nav>
 
-    <div class="row">
-        <div class="col-md-4">
 
-            <div class="card" id="queen_logo">
-                <img class="card-img" src="{{ url_for('static', filename='images/queen.png') }}">
-            </div>
-        </div>
-
-        <div class="col-md-8">
- 
-            <div class="card" id="queen_desc">
-                <div class="card-body">
-                    <h5 class="card-title" id="welcome_title">Welcome!</h5>
-                    <p class="card-text" id="welcome_text">The Queen Alphabet website is under construction and coming
-                        soon. In the mean
-                        time to stay up to date and subscribe to regal updates below.</p>
-        
-                    
-                    <form action = "{{ request.path }}" method = "post" enctype=multipart/form-data>
-                        </br>
-                        <input type="text" id="welcome_input"
-                            class=" form-control border-top-0 border-right-0 border-left-0" name="name" value="name" />
-
-                        </br>
-                        <input type="email" id="welcome_input"
-                            class="form-control border-top-0 border-right-0 border-left-0" name="email" value="email" />
-
-                        </br>
-                        <input type="submit" id="welcome_submit" class="form-control" name="subscribe_submit"
-                            value="subscribe" />
-                        </br>
-                    </form>
-            
-                </div>
+            <h5 id=thanks_title>Thanks {{name}} for subscribing! be sure to watch your email for more regal news</h5>
+            <div class="card" id="pepe_logo">
+                <img class="card-img center" src="{{ url_for('static', filename='images/pepe.png') }}">
             </div>
 
-        </div>
-    </div>
+            <a href="{{ url_for('return_index') }}">
+        <button type="button" class="btn" id="return_home" name="Return Home"
+            value="Return Home"> Return Home </button>
+        </a>
+
 
 
 </body>

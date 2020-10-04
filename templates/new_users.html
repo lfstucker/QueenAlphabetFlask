@@ -1,11 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, inital-scale=1">
         <link rel="stylesheet" type="text/css" href="../static/css/main.css">
-        <link rel="stylesheet" type="text/css" href="../static/css/welcome.css">
+        <link rel="stylesheet" type="text/css" href="../static/css/new_users.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
             integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
@@ -18,34 +17,47 @@
             integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
             crossorigin="anonymous"></script>
             <link href="https://fonts.googleapis.com/css2?family=Schoolbell&display=swap" rel="stylesheet">
-        <title>blog page</title>
+        <title>new users page</title>
     </head>
-
-<body>
+   <body>
     <nav class="navbar navbar-expand-lg navbar-dark" id="toolbar">
         <a class="navbar-brand" id="toolbar_title">Queen Alphabet</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ url_for('return_index') }}" id="toolbar_tab">Home </a>
-                </li>
-                <li class="nav-item  active">
-                    <a class="nav-link" href="{{ url_for('return_blog') }}" id="toolbar_tab">Blog </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ url_for('return_lessons') }}" id="toolbar_tab">Lessons</a>
-                </li>
-            </ul>
-        </div>
     </nav>
 
-    blog
-    
 
-</body>
 
+      <div class="card" id="admin_login_card">
+        <form action = "{{ request.path }}" method = "post" enctype=multipart/form-data>
+        </br>
+        <label for = "username">Username</label><br>
+        <input type="text" id="admin_username"
+            class=" form-control " name="username" placeholder="username" />
+
+        </br><label for = "password">Password</label><br>
+        <input type="password" id="admin_password"
+            class="form-control " name="password" placeholder="password" />
+
+        </br>
+        <div class="row">
+            <div class="col">
+                <input type="submit" id="admin_submit" class="form-control" name="admin_submit"
+                value="submit" />
+            </div>
+            <div class="col">
+                <a href="{{ url_for('admin_index') }}" id="button_link">
+                    <button type="button" class="btn" id="admin_home" name="Admin Home"
+                        value="Admin Home"> Admin Home </button>
+                    </a> 
+            </div>
+        </div>
+        
+        </br>
+    </form>
+    </div>
+      
+   </body>
 </html>
