@@ -12,13 +12,19 @@ from flask_sqlalchemy import SQLAlchemy
 from werkzeug.utils import secure_filename
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy import create_engine, Table, Column, Integer
+from flask_session import Session
+import redis
 
 app = Flask(__name__,
             static_folder='static',
             static_url_path='/static',
             template_folder='templates')
 
+app.secret_key = os.urandom(24)
+app.config['SESSION_TYPE'] = 'redis'
+
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///queenalphabet.sqlite3'
+
 
 engine = create_engine("sqlite:///queenalphabet.sqlite3")
 
@@ -26,6 +32,19 @@ UPLOAD_FOLDER = './static/images'
 ALLOWED_EXTENSIONS = {'txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'}
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 db = SQLAlchemy(app)
+r = redis.from_url(
+    "redis://h:p6172946c3b02631a0bd95526b41b5042773915da3973338ca22f97a9f87c82b9@ec2-34-204-134-58.compute-1.amazonaws.com:27409")
+# r = redis.from_url(os.environ.get("REDIS_URL"))
+app.config['SESSION_REDIS'] = r
+
+sess = Session()
+sess.init_app(app)
+
+# def getSession():
+#     return session.get('key', 'not set')
+# def setSession():
+#     session.set('key')=123
+#     return 'ok'
 
 
 class students(db.Model):
@@ -147,11 +166,12 @@ def return_admin_login():
                                           username, users.password == password)
             result = query.first()
             if result == None:
-                flash('wrong password!')
+
                 session['logged_in'] = False
+                # session.set('logged_in')=False
             else:
                 session['logged_in'] = True
-                flash('right password!')
+            #    session.set('logged_in')=True
                 return redirect(url_for('admin_index'))
             # flash(' User logged in')
 

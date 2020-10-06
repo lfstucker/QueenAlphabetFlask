@@ -1,6 +1,9 @@
+gunicorn
 Flask
 requests
 aiohttp
 asyncio
 pytz
 flask-sqlalchemy
+redis
+flask_session
