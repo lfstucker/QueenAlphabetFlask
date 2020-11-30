@@ -18,6 +18,7 @@
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=Schoolbell&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>main page</title>
 </head>
 
@@ -42,6 +43,11 @@
                 </li>
             </ul>
         </div>
+        <a href="#" class="fa fa-facebook"></a>
+        <a href="#" class="fa fa-twitter"></a>
+        <a href="#" class="fa fa-youtube"></a>
+        <a href="#" class="fa fa-instagram"></a>
+        <a href="#" class="fa fa-pinterest"></a>
     </nav>
 
     <div class="row">
@@ -53,16 +59,16 @@
         </div>
 
         <div class="col-md-8">
- 
+
             <div class="card" id="queen_desc">
                 <div class="card-body">
                     <h5 class="card-title" id="welcome_title">Welcome!</h5>
                     <p class="card-text" id="welcome_text">The Queen Alphabet website is under construction and coming
                         soon. In the mean
                         time to stay up to date and subscribe to regal updates below.</p>
-        
-                    
-                    <form action = "{{ request.path }}" method = "post" enctype=multipart/form-data>
+
+
+                    <form action="{{ request.path }}" method="post" enctype=multipart/form-data>
                         </br>
                         <input type="text" id="welcome_input"
                             class=" form-control border-top-0 border-right-0 border-left-0" name="name" value="name" />
@@ -76,7 +82,7 @@
                             value="subscribe" />
                         </br>
                     </form>
-            
+
                 </div>
             </div>
 

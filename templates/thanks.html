@@ -18,6 +18,7 @@
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=Schoolbell&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>thanks page</title>
 </head>
 
@@ -42,18 +43,22 @@
                 </li>
             </ul>
         </div>
+        <a href="#" class="fa fa-facebook"></a>
+        <a href="#" class="fa fa-twitter"></a>
+        <a href="#" class="fa fa-youtube"></a>
+        <a href="#" class="fa fa-instagram"></a>
+        <a href="#" class="fa fa-pinterest"></a>
     </nav>
 
 
-            <h5 id=thanks_title>Thanks {{name}} for subscribing! be sure to watch your email for more regal news</h5>
-            <div class="card" id="pepe_logo">
-                <img class="card-img center" src="{{ url_for('static', filename='images/pepe.png') }}">
-            </div>
+    <h5 id=thanks_title>Thanks {{name}} for subscribing! be sure to watch your email for more regal news</h5>
+    <div class="card" id="pepe_logo">
+        <img class="card-img center" src="{{ url_for('static', filename='images/pepe.png') }}">
+    </div>
 
-            <a href="{{ url_for('return_index') }}">
-        <button type="button" class="btn" id="return_home" name="Return Home"
-            value="Return Home"> Return Home </button>
-        </a>
+    <a href="{{ url_for('return_index') }}">
+        <button type="button" class="btn" id="return_home" name="Return Home" value="Return Home"> Return Home </button>
+    </a>
 
 
 

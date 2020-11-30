@@ -34,8 +34,7 @@ UPLOAD_FOLDER = './static/images'
 ALLOWED_EXTENSIONS = {'txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'}
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 db = SQLAlchemy(app)
-r = redis.from_url(
-    "redis://h:p6172946c3b02631a0bd95526b41b5042773915da3973338ca22f97a9f87c82b9@ec2-54-197-240-208.compute-1.amazonaws.com:24599")
+r = redis.from_url(os.environ.get("REDIS_URL"))
 # r = redis.from_url(os.environ.get("REDIS_URL"))
 app.config['SESSION_REDIS'] = r
 
@@ -123,12 +122,12 @@ def return_index():
 
             flash(' You have successfully subscribed')
             return render_template('thanks.html', name=request.form['name'])
-    return render_template('fake_index.html')
+    return render_template('index.html')
 
 
 @app.route('/blog')
 def return_blog():
-    return render_template('blog.html')
+    return render_template('blog.html', blogs=blogs.query.all())
 
 
 @app.route('/email_list')
