@@ -133,7 +133,7 @@ def return_blog():
 
 @app.route('/email_list')
 def return_email_list():
-    if session['logged_in'] == True:
+    if sess['logged_in'] == True:
         emails = subscribers.query.with_entities(subscribers.email).all()
         return render_template('email_list.html', emails=emails)
     else:
@@ -147,7 +147,7 @@ def return_thanks():
 
 @app.route('/preview_blog')
 def return_preview():
-    if session['logged_in'] == True:
+    if sess['logged_in'] == True:
         return render_template('preview_blog.html')
     else:
         return redirect(url_for('return_admin_login'))
@@ -169,10 +169,10 @@ def return_admin_login():
             result = query.first()
             if result == None:
 
-                session['logged_in'] = False
+                sess['logged_in'] = False
                 # session.set('logged_in')=False
             else:
-                session['logged_in'] = True
+                sess['logged_in'] = True
             #    session.set('logged_in')=True
                 return redirect(url_for('admin_index'))
             # flash(' User logged in')
@@ -187,7 +187,7 @@ def return_lessons():
 
 @ app.route('/show_users', methods=['GET', 'POST', 'DELETE', 'PATCH'])
 def show_users():
-    if session.get('logged_in') == True:
+    if sess['logged_in'] == True:
 
         # if request.method == 'PATCH':
         #     print(request.form['Update'])
@@ -214,7 +214,7 @@ def show_users():
 
 @ app.route('/show_blogs', methods=['GET', 'POST'])
 def show_blogs():
-    if session['logged_in'] == True:
+    if sess['logged_in'] == True:
         if request.method == 'POST':
             print(request.form['View'])
             clicked_title = request.form['View']
@@ -228,7 +228,7 @@ def show_blogs():
 
 @ app.route('/admin_index')
 def admin_index():
-    if session['logged_in'] == True:
+    if sess['logged_in'] == True:
         return render_template('admin_index.html')
     else:
         return redirect(url_for('return_admin_login'))
@@ -236,7 +236,7 @@ def admin_index():
 
 @ app.route('/new_blogs', methods=['GET', 'POST'])
 def new_blogs():
-    if session['logged_in'] == True:
+    if sess['logged_in'] == True:
         if request.method == 'POST':
             if request.form['submit_button'] == 'create':
                 if not request.form['author'] or not request.form['date'] or not request.form['blog'] or not request.form['title']:
@@ -272,7 +272,7 @@ def new_blogs():
 
 @ app.route('/new_users', methods=['GET', 'POST'])
 def new_users():
-    if session['logged_in'] == True:
+    if sess['logged_in'] == True:
         if request.method == 'POST':
             if not request.form['username'] or not request.form['password']:
                 flash('Please enter all the fields', 'error')
