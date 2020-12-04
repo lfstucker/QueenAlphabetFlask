@@ -181,6 +181,9 @@ def return_admin_login():
             else:
                 print('logged in worked')
                 session['logged_in'] = True
+                print('should have been logged in now, current var is: ')
+                print(session.get('logged_in'))
+                print('above')
             #    session.set('logged_in')=True
                 return redirect(url_for('admin_index'))
             # flash(' User logged in')
