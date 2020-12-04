@@ -22,7 +22,7 @@ app = Flask(__name__,
 
 # https://hackersandslackers.com/managing-user-session-variables-with-flask-sessions-and-redis/
 
-app.secret_key = os.urandom(24)
+app.secret_key = os.environ.get("SESSION_KEY")
 app.config['SESSION_TYPE'] = 'redis'
 
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///queenalphabet.sqlite3'
