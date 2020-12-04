@@ -159,7 +159,9 @@ def return_preview():
 
 @app.route('/admin_login', methods=['GET', 'POST'])
 def return_admin_login():
-    print('trying to log in')
+    print('trying to log in, current var is: ')
+    print(session.get('logged_in'))
+    print('above')
     if request.method == 'POST':
         if not request.form['username'] or not request.form['password']:
             flash('Please enter all the fields', 'error')
