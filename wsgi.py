@@ -38,6 +38,8 @@ db = SQLAlchemy(app)
 #     "redis://h:p6172946c3b02631a0bd95526b41b5042773915da3973338ca22f97a9f87c82b9@ec2-34-203-110-237.compute-1.amazonaws.com:22799")
 r = redis.from_url(os.environ.get("REDIS_URL"))
 app.config['SESSION_REDIS'] = r
+app.config["SESSION_PERMANENT"] = False
+app.config["SESSION_TYPE"] = "filesystem"
 
 sess = Session()
 sess.init_app(app)
