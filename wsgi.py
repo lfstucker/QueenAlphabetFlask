@@ -178,6 +178,7 @@ def return_admin_login():
                 # session.set('logged_in')=False
             else:
                 print('logged in worked')
+                session.flush
                 session['logged_in'] = True
             #    session.set('logged_in')=True
                 return redirect(url_for('admin_index'))
