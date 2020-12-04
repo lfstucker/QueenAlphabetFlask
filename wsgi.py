@@ -159,6 +159,7 @@ def return_preview():
 
 @app.route('/admin_login', methods=['GET', 'POST'])
 def return_admin_login():
+    print('trying to log in')
     if request.method == 'POST':
         if not request.form['username'] or not request.form['password']:
             flash('Please enter all the fields', 'error')
@@ -172,10 +173,11 @@ def return_admin_login():
                                           username, users.password == password)
             result = query.first()
             if result == None:
-
+                print('failed the log in')
                 session['logged_in'] = False
                 # session.set('logged_in')=False
             else:
+                print('logged in worked')
                 session['logged_in'] = True
             #    session.set('logged_in')=True
                 return redirect(url_for('admin_index'))
@@ -232,9 +234,11 @@ def show_blogs():
 
 @ app.route('/admin_index')
 def admin_index():
+    print('attempting admin index')
     if session.get('logged_in') == True:
         return render_template('admin_index.html')
     else:
+        print('not logged in')
         return redirect(url_for('return_admin_login'))
 
 
